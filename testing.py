@@ -12,10 +12,13 @@ plot_widget=pg.PlotWidget()
 window.setCentralWidget(plot_widget)
 
 x=np.linspace(-10,10,100)
+#Variable array called X
 
 expression=parse_latex("x^2")
-
+#When parsing, it does not use the x array, uses a different sympy variable, so another
+#Data set is not created for PyQt to graph, fix this IMMEDIATELY
 functions=[expression]
+
 
 for item in functions:
     plot_widget.plot(x,item)
