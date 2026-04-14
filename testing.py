@@ -6,6 +6,7 @@ import numpy as np
 import sys
 from sympy.parsing.latex import parse_latex
 from sympy import symbols,lambdify
+
 app=QtWidgets.QApplication(sys.argv)
 window=QtWidgets.QMainWindow()
 window.resize(800,600)
@@ -13,8 +14,7 @@ window.resize(800,600)
 sidebar=uic.loadUi(r"C:\Users\Mark\Documents\The Project\test.ui",window)
 
 plot_widget=pg.PlotWidget()
-sidebar= QtWidgets.QWidget()
-window.setCentralWidget(plot_widget)
+ExpressionEditor=QtWidgets.QLineEdit()
 array=np.linspace(-10,10,100)
 #Array that acts as the x values for the plot
 
@@ -31,6 +31,7 @@ for item in functions:
 plot_widget.setXRange(-10,10)
 plot_widget.setYRange(-10,10)
 plot_widget.showGrid(x=True,y=True)
+
 
 window.show()
 sys.exit(app.exec())
